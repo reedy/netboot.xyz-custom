@@ -3,8 +3,13 @@
 ### netboot.xyz-custom menu
 ###
 
-:start
-echo Hello world!
+:memtest
+sanboot http://10.13.37.215/netboot/memtest86+-5.31b.iso
+sleep 10
+goto custom_exit
+
+:samsung
+sanboot http://10.13.37.215/netboot/Samsung_SSD_970_EVO_Plus_2B2QEXM7.iso
 sleep 10
 goto custom_exit
 
