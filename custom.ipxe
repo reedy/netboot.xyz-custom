@@ -7,7 +7,7 @@
 clear custom_choice
 menu Reedy Menu
 item memtest ${space} Loading a memtest iso
-item option_two ${space} Loading Samsung ISO
+item samsung ${space} Loading Samsung ISO
 choose custom_choice || goto custom_exit
 echo ${cls}
 goto ${custom_choice}
