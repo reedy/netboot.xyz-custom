@@ -15,12 +15,12 @@ goto custom_exit
 
 :memtest
 kernel https://boot.netboot.xyz/memdisk raw iso
-initrd http://10.13.37.215/netboot/memtest86+-5.31b.iso
+initrd http://10.13.37.215/netboot/memtest
 boot || goto custom_exit
 
 :samsung
 kernel https://boot.netboot.xyz/memdisk raw iso
-initrd http://10.13.37.215/netboot/Samsung_SSD_970_EVO_Plus_2B2QEXM7.iso
+initrd http://10.13.37.215/netboot/samsung
 boot || goto custom_exit
 
 :custom_exit
