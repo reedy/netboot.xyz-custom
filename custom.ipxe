@@ -3,15 +3,26 @@
 ### netboot.xyz-custom menu
 ###
 
-:memtest
-sanboot http://10.13.37.215/netboot/memtest86+-5.31b.iso
-sleep 10
+:custom
+clear custom_choice
+menu Reedy Menu
+item memtest ${space} Loading a memtest iso
+item option_two ${space} Loading Samsung ISO
+choose custom_choice || goto custom_exit
+echo ${cls}
+goto ${custom_choice}
 goto custom_exit
+
+:memtest
+kernel https://boot.netboot.xyz/memdisk raw iso
+initrd http://10.13.37.215/netboot/memtest86+-5.31b.iso
+boot || goto custom_exit
 
 :samsung
-sanboot http://10.13.37.215/netboot/Samsung_SSD_970_EVO_Plus_2B2QEXM7.iso
-sleep 10
-goto custom_exit
+kernel https://boot.netboot.xyz/memdisk raw iso
+initrd http://10.13.37.215/netboot/Samsung_SSD_970_EVO_Plus_2B2QEXM7.iso
+boot || goto custom_exit
 
 :custom_exit
-exit 0
+chain utils.ipxe
+exit
